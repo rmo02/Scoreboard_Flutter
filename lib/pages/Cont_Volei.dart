@@ -10,29 +10,31 @@ class Volei extends StatefulWidget {
 }
 
 class _VoleiState extends State<Volei> {
+  //criando as variaveis
   int _counter1 = 0;
   int _counter2 = 0;
 
+  // adicionando pontos feitos
   void _incrementCounter1() {
     setState(() {
       _counter1++;
     });
   }
-
   void _incrementCounter2() {
     setState(() {
       _counter2++;
     });
   }
 
+  //retirando pontos atribuidos
   void _decrementCount1() {
     setState(() => _counter1--);
   }
-
   void _decrementCount2() {
     setState(() => _counter2--);
   }
 
+  //resetando o placar
   void _resetCount() {
     setState(() {
       _counter2 = 0;
@@ -40,6 +42,7 @@ class _VoleiState extends State<Volei> {
     });
   }
 
+  // forçando a orientação da tela
   @override
   void initState(){
     super.initState();
@@ -58,6 +61,7 @@ class _VoleiState extends State<Volei> {
         height: MediaQuery.of(context).size.height,
         child: Row(
           children: [
+            //tonando toda área do container clicável e atribuindo ponto
             InkWell(
               onTap: (){
                 _incrementCounter1();
@@ -84,6 +88,7 @@ class _VoleiState extends State<Volei> {
                         fontWeight: FontWeight.w500
                       ),),
                     ),
+                    //botão para retroceder um ponto
                     BackButton(
                       color: Colors.white,
                       onPressed: (){
